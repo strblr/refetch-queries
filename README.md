@@ -65,7 +65,7 @@ const addTodo = useMutation(AddTodoMutation, {
 
 #### Step 1 - Use this module's `useQuery` instead of Apollo's.
 
-This module exports a `useQuery` hooks that has the exact same signature as Apollo's `useQuery`, and basically does the same thing except that is stores some informations as a side-effect on each query.
+This module exports a `useQuery` hooks that has the exact same signature as Apollo's `useQuery`, and basically does the same thing except that it stores some informations as a side-effect on each query.
 
 ```javascript
 import { useQuery } from "refetch-queries";
