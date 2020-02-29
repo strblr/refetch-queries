@@ -1,0 +1,48 @@
+{
+  "name": "refetch-queries",
+  "version": "1.0.1",
+  "description": "Refetch Apollo queries by name and partial variables (ideal for refetching paginated queries)",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ostrebler/refetch-queries.git"
+  },
+  "keywords": [
+    "apollo",
+    "react",
+    "queries",
+    "query",
+    "mutation",
+    "refetch",
+    "refetching",
+    "refetchQuery",
+    "refetchQueries",
+    "variables",
+    "partial"
+  ],
+  "author": "ostrebler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ostrebler/refetch-queries/issues"
+  },
+  "homepage": "https://github.com/ostrebler/refetch-queries#readme",
+  "dependencies": {
+    "@apollo/react-common": "^3.1.3",
+    "@apollo/react-hooks": "^3.1.3",
+    "apollo-client": "^2.6.8",
+    "apollo-utilities": "^1.3.3",
+    "graphql": "^14.6.0",
+    "lodash": "^4.17.15",
+    "react": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.9.23",
+    "typescript": "^3.8.3"
+  }
+}
