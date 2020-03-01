@@ -1,6 +1,6 @@
 {
   "name": "refetch-queries",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Refetch Apollo queries by name and partial variables (ideal for refetching paginated queries)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

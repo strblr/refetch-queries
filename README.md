@@ -114,14 +114,14 @@ addTodo({
 });
 ```
 
-And that's it. You can chose the subset of variables that you want, and it will refetch all queries whose variables match the given subset (using `lodash.isMatch`). Enjoy !
+And that's it. You can choose the subset of variables that you want, and it will refetch all queries whose variables match the given subset (using `lodash.isMatch`). Enjoy !
 
 #### Note 1
 
 You can also use `refetchQueriesMatch` in a traditional way. So, the following works too and refetches all `Todos` queries :
 
 ```javascript
-import { refetchQueries } from "refetch-queries";
+import { useMutation } from "refetch-queries";
 
 const [addTodo] = useMutation(AddTodoMutation, {
   refetchQueriesMatch: ["Todos"]
