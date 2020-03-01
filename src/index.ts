@@ -7,7 +7,9 @@ import {
 } from "@apollo/react-hooks";
 import { OperationVariables } from "@apollo/react-common";
 import { DocumentNode } from "graphql";
-import { isEqual, isMatch, isString } from "lodash";
+import isEqual from "lodash/isEqual";
+import isMatch from "lodash/isMatch";
+import isString from "lodash/isString";
 
 // Types
 

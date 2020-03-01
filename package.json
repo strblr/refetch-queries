@@ -1,6 +1,6 @@
 {
   "name": "refetch-queries",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Refetch Apollo queries by name and partial variables (ideal for refetching paginated queries)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,12 +37,15 @@
     "apollo-client": "^2.6.8",
     "apollo-utilities": "^1.3.3",
     "graphql": "^14.6.0",
-    "lodash": "^4.17.15",
-    "react": "^16.13.0"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.23",
+    "react": "^16.13.0",
     "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0"
   }
 }
