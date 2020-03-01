@@ -10,7 +10,9 @@ import {
   QueryHookOptions
 } from "@apollo/react-hooks";
 import {
+  ExecutionResult,
   MutationFunctionOptions,
+  MutationResult,
   OperationVariables
 } from "@apollo/react-common";
 import isEqual from "lodash/isEqual";
@@ -34,6 +36,13 @@ export type ExtendedMutationFunctionOptions<
 > = MutationFunctionOptions<TData, TVariables> & {
   refetchQueriesMatch?: QueryTargets;
 };
+
+export type ExtendedMutationTuple<TData, TVariables> = [
+  (
+    options?: ExtendedMutationFunctionOptions<TData, TVariables>
+  ) => Promise<ExecutionResult<TData>>,
+  MutationResult<TData>
+];
 
 // The store
 
@@ -70,12 +79,12 @@ export function useQuery<TData = any, TVariables = OperationVariables>(
 export function useMutation<TData = any, TVariables = OperationVariables>(
   mutation: DocumentNode,
   options?: ExtendedMutationHookOptions<TData, TVariables>
-): MutationTuple<TData, TVariables> {
+): ExtendedMutationTuple<TData, TVariables> {
   const { refetchQueriesMatch, onCompleted, ...baseOptions } = options || {};
   const [baseCallback, result] = useMutationBase(mutation, {
     ...baseOptions,
     onCompleted(data) {
-      refetchQueries(refetchQueriesMatch || []);
+      refetchQueriesMatch && refetchQueries(refetchQueriesMatch);
       return onCompleted && onCompleted(data);
     }
   });
@@ -84,7 +93,7 @@ export function useMutation<TData = any, TVariables = OperationVariables>(
     (options?: ExtendedMutationFunctionOptions<TData, TVariables>) => {
       const { refetchQueriesMatch, ...baseOptions } = options || {};
       return baseCallback(baseOptions).then(result => {
-        refetchQueries(refetchQueriesMatch || []);
+        refetchQueriesMatch && refetchQueries(refetchQueriesMatch);
         return result;
       });
     },
