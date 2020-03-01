@@ -4,7 +4,6 @@ import { ApolloQueryResult, PureQueryOptions } from "apollo-client";
 import { getOperationName } from "apollo-utilities";
 import {
   MutationHookOptions,
-  MutationTuple,
   useMutation as useMutationBase,
   useQuery as useQueryBase,
   QueryHookOptions
